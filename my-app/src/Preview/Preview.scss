@@ -1,0 +1,42 @@
+@use '../vars';
+
+.body {
+    // @media (min-width: 900px) {
+    //     display: none;
+    // }
+}
+
+.preview-container {
+    
+    width: fit-content;
+    margin: auto;
+    .preview {
+        margin: 2em;
+
+        iframe {
+            height: 50vh;
+        }
+    }
+}
+.generate {
+        margin-top: 3em;
+
+        &-button {
+            font-family: vars.$font-family;
+            padding: 1.2em;
+            background-color: vars.$background-input;
+            color: vars.$font-color;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 1em;
+            transform: scale(1);
+            transition: transform 0.8s;
+
+            &:hover {
+                background-color: vars.$background-selected-color;
+                color: vars.$background-input;
+                transform: scale(1.2);
+                transition: transform 0.5s;
+            }
+        }
+    }

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-swipeable": "^7.0.0",
+    "swiper": "^9.0.5"
+  }
+}

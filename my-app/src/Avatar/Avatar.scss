@@ -1,0 +1,27 @@
+@use '../vars';
+
+.avatar {
+    padding: 10px;
+    margin:  0 40px;
+    position: fixed;
+    vertical-align: baseline;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 400px;
+    max-height: 80vh;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.6);
+
+    &-image {
+      width: 400px;
+      height: 80vh;
+      object-fit: cover;
+      border: solid 3px black;
+      box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 900px) {
+        display: none;
+    }
+  }

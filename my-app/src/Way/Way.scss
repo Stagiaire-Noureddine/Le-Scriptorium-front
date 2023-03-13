@@ -1,0 +1,313 @@
+@use '../vars';
+
+.body {
+    max-width: 1700px;
+    font-family: vars.$font-family;
+}
+
+.way-main {
+    margin: auto;
+}
+
+.stats-header {
+    margin-top: 1em;
+    padding: 0.3em;
+    max-height: 15vh;
+
+    &-mod {
+        display: flex;
+        justify-content: center;
+        // max-width: 80vw;
+        
+
+        .stat-info {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            width: 2em;
+            margin: 0.5em;
+            padding: 0.2em 1em 0.2em 0.5em;
+            background-color: vars.$background-input;
+            border-radius: 0.5em;
+            font-size: 0.65em;
+
+            @media (min-width: 550px) {
+                min-width: 3em;
+                font-size: 0.8em;
+            }
+
+            @media (min-width: 900px) {
+                min-width: 2em;
+            }
+
+            @media (min-width: 1200px) {
+                min-width: 3.5em;
+                font-size: 0.9em;
+            }
+
+            .stat-mod {
+                height: fit-content;
+                padding: 0.2em 0.7em;
+                border: 1px solid vars.$border-color;
+                border-radius: 100%;
+                position: absolute;
+                right: -40%;
+                top: -65%;
+                z-index: 100;
+                background-color: vars.$background-input;
+
+                @media (min-width: 550px) {
+                    right: -15%;
+                    top: -50%;
+                }
+
+                @media (min-width: 900px) {
+                    right: -40%;
+                    top: -55%;
+                }
+
+                @media (min-width: 1200px) {
+                    right: -15%;
+                    top: -50%;
+                }
+            }
+        }
+    }
+
+    &-other {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+        margin-top: 0.2em;
+
+        .atk, .def {
+            display: flex;
+        }
+
+        .stat-type {
+            min-width: 2.1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding-bottom: 1em;
+
+            @media (min-width: 550px) {
+                min-width: 3.5em;
+            }
+
+            @media (min-width: 1200px) {
+                min-width: 4em;
+                font-size: 1.1em;
+            }
+
+            &-value {
+                position: absolute;
+                bottom: 20%;
+                left: 60%;
+                padding: 0 0.5em;
+                background-color: vars.$background-input;
+                border-radius: 0.5em;
+                font-size: 0.75em;
+            }
+        }
+        .stats-ways-icons {
+            width: 30px;
+            height: auto;
+        }
+    }
+
+    .way-points {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-left: 5em;
+        margin-top: 1.5vh;
+
+        @media (min-width: 900px) {
+            justify-content: right;
+            margin-right: 5em;
+        }
+
+        .remaining-points {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            font-size: 110%;
+            background-color: vars.$background-input;
+            border: none;
+            color: vars.$font-color;
+
+            &-text {
+                margin-top: 2vh;
+                font-size: 80%;
+                font-style: italic;  
+            }
+        }
+    }
+}
+
+.way-container {
+    margin-top: 2em;
+    text-align: left;
+
+    @media (min-width: 550px) {
+        max-width: 80vw;
+        margin: auto;
+        margin-top: 2em;
+    }
+
+    @media (min-width: 900px) {
+        max-width: 50vw;
+        margin-right: 1em;
+    }
+
+    .way-name {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 1em 0.5em;
+        border: 1px solid vars.$border-color;
+        border-radius: 0.5em;
+        font-size: 1.2em;
+
+        &.wide {
+            display: flex;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .way-button-slider {
+            background-color: transparent;
+            border: none;
+            opacity: 0.1;
+
+            &.button-next {
+                transform: rotate(-90deg);
+            }
+
+            &.button-prev {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .way-button {
+        height: 1em;
+        margin-top: 1.5em;
+        font-size: 120%;
+        border: none;
+        background-color: transparent;
+        color: vars.$border-color;
+        &.open {
+                transform: rotate(180deg) translate(0, -50%);
+                z-index: 100;
+        }
+        &-wide {
+            display: none;
+        }
+    }
+}
+
+.way-ability-container.selected {
+    background-color: vars.$background-selected-color;
+}
+
+.way-ability {
+    padding-left: 1em;
+    padding-top: 1em;
+
+    @media (min-width: 900px) {
+        padding-right: 0.5em;
+    }
+
+    &-name {
+        font-size: 1.1em;
+        padding-bottom: 0.5em;
+        font-style: italic;
+        color: vars.$title-color;
+        
+        @media (min-width: 900px) {
+            font-size: 1.2em;
+        }
+    }
+    
+    &-level {
+        margin: 0.2em 0.5em 0 0;
+        font-size: 0.65em;
+        font-style: italic;
+        text-align: right;
+        color: vars.$font-color;
+
+        @media (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    &-description {
+        font-size: 0.9em;
+        padding-bottom: 1.5em;
+    }
+
+    &-bonus {
+        font-size: 1.1em;
+        padding-bottom: 0.5em;
+    }
+
+    @media (min-width: 900px) {
+        min-height: 30vh;
+        margin-bottom: 0.5em;
+        border: 1px solid vars.$border-color;
+        border-radius: 0.5em;
+        // height: 30vh;
+        // overflow-y: scroll; // Si le scroll des descriptions est acceptable
+        // &::-webkit-scrollbar {
+        //     width: 0.3em;
+        //     &-thumb {
+        //         background-color: vars.$background-color;
+        //         border: 0.11em solid vars.$background-input;
+        //         border-radius: 0.2em;
+        //     }
+        // } 
+    }
+}
+
+.way-changes-container {
+    text-align: left;
+    margin-top: 1.5em;
+    padding-left: 1em;
+
+    @media (max-width: 900px) {
+        min-height: 40vh;
+    }
+    
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
+.way-changes-container-desktop {
+    text-align: left;
+    margin: 0 1em;
+    padding: 1em 2em;
+    width: 50%;
+    background-color: vars.$background-input;
+    border-radius: 0.5em;
+
+    @media (max-width: 1250px) {
+        width: 42%;
+    }
+
+    @media (max-width: 1120px) {
+        width: 32vw;
+        margin-top: 2em;
+    }
+
+    @media (max-width: 900px) {
+        display: none;
+    }
+}
+.way-changes {
+    display: flex;
+    padding: 0.5em;
+}

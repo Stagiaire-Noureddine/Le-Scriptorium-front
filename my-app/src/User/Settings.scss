@@ -1,0 +1,71 @@
+@use '../vars';
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-size: 1.1em;
+        margin-top: 1em;
+        padding: 0.5em;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, vars.$background-input 50%, rgba(255, 255, 255, 0) 100%);
+
+    }
+
+    h3 {
+        font-style: italic;
+
+        @media (max-width: 400px) {
+            font-size: 0.8em;
+        }
+    }
+
+    .settings-form-container {
+
+        @media (min-width: 900px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 1em;
+            margin-top: 5em;
+        }
+    }
+
+    .settings-form {
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width: 400px) {
+            gap: 0.5em;
+        }
+
+        .button {
+            width: fit-content;
+        }
+
+        label {
+            @media (max-width: 400px) {
+                width: 75vw;
+            }
+            @media (min-width: 900px) {
+            width: 60vh;
+          }
+        }
+
+        input {
+            @media (max-width: 400px) {
+                margin: 0.3em 0;
+                width: 80%;
+            }
+            @media (min-width: 400px) {
+                margin-left: 0.5em;
+            }
+            @media (min-width: 900px) {
+              margin-left: 1em;
+              width: 30%;
+            }            
+        }
+    }
+}

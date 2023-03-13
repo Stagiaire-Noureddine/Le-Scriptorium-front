@@ -1,0 +1,125 @@
+@use '../vars';
+
+.user-info {
+  display: flex;
+  justify-content: flex-end;
+    margin-right: 10px;
+  }
+
+#burger-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  padding: 0;
+  border: solid 1px vars.$border-color;
+  cursor: pointer;
+  .line {
+    height: 1px;
+    width: 60%;
+    background-color: vars.$border-color;
+  }
+}
+
+#basic-menu {
+  background-color:rgba(0, 0, 0, 0.3);
+}
+
+// Burger menu from MUI
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+  background-color: transparent !important;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  background-color: vars.$background-input;
+  border-radius: 0.5em;
+  a {
+    font-family: vars.$font-family;
+    color: vars.$font-color;
+    font-size: 1.2em;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    &:hover {
+      transition: font-size 0.2s ease-out;
+      font-size: 1.3em;
+      // background-color: vars.$background-selected-color;
+      background: radial-gradient(vars.$background-selected-color, rgba(255, 255, 255, 0));
+
+    }
+  }
+}
+
+ul {
+
+
+  li {
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+li {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+
+  &.link {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .auth-buttons {
+    text-align: center;
+  }
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    margin: 0.2em 0 0 0.2em;
+
+    img {
+      width: 2em;
+    }
+  }
+}
+
+.button {
+  font-family: vars.$font-family;
+  background-color: vars.$background-input;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+  color: vars.$font-color;
+  padding: 0.8em;
+  margin-right: 0.3em;
+
+  &-modal, &-settings {
+    font-size: 1em;
+  }
+
+  &:hover {
+      background-color: vars.$background-selected-color;
+      color: vars.$background-input
+  }
+}
+
+.signin-form input, .signup-form input {
+    width: 80%;
+}
+

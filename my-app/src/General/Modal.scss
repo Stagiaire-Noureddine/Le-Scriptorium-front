@@ -1,0 +1,63 @@
+.general {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .general-button {
+    padding: 1rem;
+    position: absolute;
+    cursor: zoom-in;
+    z-index: 1;
+    top: 0.5em;
+    right: 0.5em;
+    height:105px;
+    width:105px;
+    background-color: transparent;    
+    display: block;
+
+  }
+  
+  .general-modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateX(0%);
+    transition: transform 0.3s ease-out;
+  }
+
+  .general-modal.closing {
+    transform: translateX(-100%); /* move the modal off-screen to the left */
+  }
+  
+  .general-image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .general-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+  }
+  
+  .general-button-image {
+    cursor: pointer;
+    width: 50px;
+    -webkit-filter: invert(100%);
+  }

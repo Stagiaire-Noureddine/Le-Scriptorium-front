@@ -1,0 +1,91 @@
+@use '../vars';
+
+
+
+html::-webkit-scrollbar {
+    width: 0.8em;
+    background-color: vars.$background-input;
+    border-radius: 1em;
+    &-thumb {
+        background-color: vars.$background-color;
+        border-radius: 1em;
+        border: 0.3em solid vars.$background-input;
+    }
+}
+
+body {
+    position: relative;
+    max-height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    font-family: vars.$font-family;
+    color: vars.$font-color;
+    font-size: 19px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: center;
+    background-color: vars.$background-color;
+
+    h1 {
+        font-size: 1.8rem;
+        margin: 0.5em 0 0.8em;
+    }
+
+    input, textarea, .box {
+        font-family: inherit;
+        font-size: inherit !important;
+        line-height: inherit;
+        font-weight: inherit;
+        background: vars.$background-input;
+        border-radius: 10px;
+        color: vars.$font-color;
+        border: none;
+    }
+
+    ::placeholder {
+        text-align: center;
+        color: rgb(168, 168, 168);
+        font-size: 15px;
+    }
+
+    .modal-title {
+        font-size: 1.2em;
+    }
+    
+    .modal-buttons {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1.2em;
+    }
+
+    .next-page {
+        max-width: 100px;
+        z-index: 100;
+        margin-top: 2em;
+        opacity: 0.3;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0.6em;
+        &-thumb {
+            background-color: vars.$background-color;
+            border: 0.17em solid vars.$background-input;
+        }
+    } 
+    
+}
+.MuiTooltip-tooltip {
+    background-color: black;
+    color: white;
+  }
+
+@media (min-width: 900px) {
+    .main {
+        margin-left: 500px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
