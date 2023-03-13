@@ -37,7 +37,7 @@ const Profile = () => {
     
 
   useEffect (() => {
-    axios.get("http://localhost:8080/api/characters/users", {
+    axios.get("https://jdr-api.com/api/characters/users", {
       headers: {
         "Authorization":  `Bearer ${token}`
       }})
@@ -50,7 +50,7 @@ const Profile = () => {
   }, [refreshList]);
 
   const handleDownload = (sheetId) => {
-    axios.get(`http://localhost:8080/api/generator/sheet/${sheetId}`, {
+    axios.get(`https://jdr-api.com/api/generator/sheet/${sheetId}`, {
       responseType: 'blob',
       headers: {
         "Authorization":  `Bearer ${token}`
@@ -78,7 +78,7 @@ const Profile = () => {
 
   const handleEdit = (sheetId) => {
     setSelectedSheetId(sheetId);
-    // axios.patch(`http://localhost:8080/api/characters/${sheetId}`, {
+    // axios.patch(`https://jdr-api.com/api/characters/${sheetId}`, {
     //   responseType: 'json',
     //   headers: {
     //     "Authorization": `Bearer ${token}`
@@ -90,7 +90,7 @@ const Profile = () => {
 
   const handleDelete = (sheetId) => {
     setSelectedSheetId(sheetId);
-    axios.delete(`http://localhost:8080/api/characters/${selectedSheetId}`, {
+    axios.delete(`https://jdr-api.com/api/characters/${selectedSheetId}`, {
       responseType: 'json',
       headers: {
         "Authorization": `Bearer ${token}`

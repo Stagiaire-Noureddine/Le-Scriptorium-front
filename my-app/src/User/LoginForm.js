@@ -36,7 +36,7 @@ function LoginForm(props) {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/api/login_check', data);
+      const response = await axios.post('https://jdr-api.com/api/login_check', data);
       if (response.data.token) {
         Cookies.set('token', response.data.token, { secure: true, sameSite: 'strict' });
         const decodedToken = jwtDecode(response.data.token);

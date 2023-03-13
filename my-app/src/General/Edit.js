@@ -91,7 +91,7 @@ const Edit = ({ religions }) => {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/characters/${selectedSheetId}`, {
+    axios.get(`https://jdr-api.com/api/characters/${selectedSheetId}`, {
         headers: {
           "Authorization":  `Bearer ${token}`
         }})
@@ -125,7 +125,7 @@ const Edit = ({ religions }) => {
   const handleEdit = () => {
     if (user) {
         const token = Cookies.get('token');
-        axios.patch(`http://localhost:8080/api/characters/${selectedSheetId}`, dataToUpdate,
+        axios.patch(`https://jdr-api.com/api/characters/${selectedSheetId}`, dataToUpdate,
         {responseType: 'blob',
         headers: {
             'accept': 'application/json',

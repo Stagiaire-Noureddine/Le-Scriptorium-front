@@ -20,7 +20,7 @@ const Race = () => {
   } = useContext(SheetContext);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/races").then((response) => {
+    axios.get("https://jdr-api.com/api/races").then((response) => {
       setRaces(response.data.races);
       console.log(response.data.races);
 

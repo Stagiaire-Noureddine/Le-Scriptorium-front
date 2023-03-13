@@ -31,7 +31,7 @@ const SignUpForm = (props) => {
     event.preventDefault();
 
     try {
-      await axios.post('http://localhost:8080/resend-activation', {
+      await axios.post('https://jdr-api.com/resend-activation', {
         email: email,
       });
       setSuccessMessage('Un nouvel e-mail d\'activation a été envoyé.');

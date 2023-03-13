@@ -67,7 +67,7 @@ const Class = () => {
     };
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/classes")
+        axios.get("https://jdr-api.com/api/classes")
         .then((response) => {
             const classData = response.data.classes;
             console.log(classData);

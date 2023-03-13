@@ -244,7 +244,7 @@ const Way = () => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/ways/${classId}`)
+        axios.get(`https://jdr-api.com/api/ways/${classId}`)
             .then((response) => {
                 setWays(response.data.ways);
                 setWaysNumber(response.data.ways.length);

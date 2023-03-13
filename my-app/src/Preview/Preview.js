@@ -86,7 +86,7 @@ const Preview = () => {
 
         if(user) {
             const token = Cookies.get('token');
-            axios.post("http://localhost:8080/api/characters", sheetData,
+            axios.post("https://jdr-api.com/api/characters", sheetData,
             {responseType: 'arraybuffer',
             headers: {
                 'accept': 'application/json',
@@ -101,7 +101,7 @@ const Preview = () => {
 
     useEffect(() => {       
         console.log(sheetData);
-        axios.post("http://localhost:8080/api/generator", sheetData, {responseType: 'arraybuffer', headers: {'accept': 'application/json'}})
+        axios.post("https://jdr-api.com/api/generator", sheetData, {responseType: 'arraybuffer', headers: {'accept': 'application/json'}})
             .then((response) => {
                 const blob = new Blob([response.data], {type: 'application/pdf'});
                 setPdfUrl(URL.createObjectURL(blob));
